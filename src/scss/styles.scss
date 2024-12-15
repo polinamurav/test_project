@@ -1,2 +1,7 @@
 //@use "../../node_modules/bootstrap/scss/bootstrap";
 @use 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons.min.css';
+
+.btn {
+  border-radius: 0 30px 0 30px;
+}

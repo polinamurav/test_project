@@ -6,9 +6,32 @@
     <title>Bootstrap w/ Webpack</title>
 </head>
 <body>
-<div class="container py-4 px-3 mx-auto">
-    <h1>Hello, Bootstrap and Webpack!</h1>
-    <button class="btn btn-primary">Primary button</button>
-</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Бренд</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Каталог</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Цены</a>
+                </li>
+            </ul>
+            <button class="btn btn-primary"><i class="bi bi-telephone-fill"></i>Заказать звонок</button>
+        </div>
+    </div>
+</nav>
+
+
+
 </body>
 </html>
