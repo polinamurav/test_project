@@ -1,24 +1,19 @@
-'use strict'
-
-const path = require('path')
-const autoprefixer = require('autoprefixer')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
     entry: './src/js/main.js',
     output: {
         filename: 'main.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
+        clean: true,
     },
     devServer: {
         static: path.resolve(__dirname, 'dist'),
         port: 8080,
-        hot: true
+        hot: true,
     },
-    plugins: [
-        new HtmlWebpackPlugin({ template: './src/index.html' })
-    ],
     module: {
         rules: [
             {
@@ -37,6 +32,9 @@ module.exports = {
                     },
                 ],
             },
-        ]
+        ],
     },
-}
+    plugins: [
+        new HtmlWebpackPlugin({ template: './src/index.html' }),
+    ],
+};
