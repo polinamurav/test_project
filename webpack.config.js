@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
     mode: 'development',
@@ -16,6 +17,13 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.(jpg|jpeg|png|gif|svg)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/images/[name][ext]',
+                },
+            },
             {
                 test: /\.scss$/,
                 use: [
@@ -35,6 +43,11 @@ module.exports = {
         ],
     },
     plugins: [
-        new HtmlWebpackPlugin({ template: './src/index.html' }),
+        new HtmlWebpackPlugin({template: './src/index.html'}),
+        new CopyPlugin({
+            patterns: [
+                {from: "./src/static/images", to: "images"}
+            ]
+        })
     ],
 };
